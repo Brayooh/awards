@@ -18,4 +18,15 @@ class UserUpdateForm(forms.ModelForm):
         model = User
         fields = ['email']
 
+class ProfileUpdateForm(forms.ModelForm):
+    class Meta:
+        model = Profile
+        fields = ['image', 'bio']
 
+
+
+class ProjectForm(forms.ModelForm):
+
+    class Meta:
+        model= Projects
+        exclude= ['author', 'created_date', 'author_profile']
