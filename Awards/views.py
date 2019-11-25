@@ -125,6 +125,7 @@ def search_projects(request):
 
 
 class ProjectList(APIView):
+
     def get(self, request, format=None):
         allprojects = Projects.objects.all()
         serializers = ProjectSerializer(allprojects, many=True)
@@ -132,6 +133,7 @@ class ProjectList(APIView):
 
 
 class ProfileList(APIView):
+    
     def get(self, request, format=None):
         allprofiles = Profile.objects.all()
         serializers = ProfileSerializer(allprofiles, many=True)
