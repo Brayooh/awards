@@ -85,7 +85,6 @@ WSGI_APPLICATION = 'Projects.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
 
-DEBUG = config('DEBUG', default=False, cast=bool)
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
