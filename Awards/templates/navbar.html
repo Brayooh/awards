@@ -7,7 +7,7 @@
       <!-- Navbar brand -->
       <div class="award">
             <a class="nav-link text-dark" href="/">
-              <h1>Awards</h1>
+              <h1 style="color:rgb(109, 108, 94)"><img style="height: 22px; width: 22px; filter: invert(148%) sepia(193%) saturate(107%) hue-rotate(130deg) brightness(65%) contrast(10%);" src="https://image.flaticon.com/icons/png/512/49/49824.png" alt=""> Awards</h1>
               <span class="sr-only">(current)</span>
             </a>
       </div>
@@ -27,12 +27,12 @@
           {% else %}
           <div class="btn btn-dark btn-sm">
             <li class="nav-item">
-              <a class="nav-link text-white" href="{% url 'login' %}"><h5>Loginlight</h5></a>
+              <a class="nav-link text-white" href="{% url 'login' %}"><h5>Log in</h5></a>
             </li>
           </div>
           <div class="btn btn-dark btn-sm">
             <li class="nav-item">
-              <a class="nav-link text-white" href="{% url 'register' %}"><h5>Register</h5></a>
+              <a class="nav-link text-white" href="{% url 'register' %}"><h5>Sign Up</h5></a>
             </li>
           </div>
           {% endif %}
@@ -50,7 +50,7 @@
         </div>
       </ul>
       <div class="">
-        <li class="nav-item dropdown ml-2 text-light">
+        <li class="nav-item dropdown ml-2 ">
           <a style="font-size: 15px; color:rgb(255, 254, 198)" class="nav-link dropdown-toggle text-light" id="navbarDropdownMenuLink" data-toggle="dropdown"
             aria-haspopup="true" aria-expanded="false">Account</a>
           <div style="color:rgb(255, 254, 198)"  class="dropdown-menu dropdown-primary text-dark" aria-labelledby="navbarDropdownMenuLink">

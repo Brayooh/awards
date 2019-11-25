@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="container-full banner content">
+<div class=" overlaybanner ">
+  <div class=" ml-5">
+ 
+
+</div>
+
+<section id="projects">
+  <div class="container-fluid content mt-5">
+    <div class="container-fluid mb-5">
+      <div class="row">
+        <div class="col-md-8">
+          <h4>Projects of the day</h4>
+        </div>
+      </div>
+    </div>
+    <div style="color: rgb(24, 24, 24)" class="row pl-2 pr-2 ml-1 mr-1">
+        {% for project_item in projects %}
+            <div class="col-lg-4">
+                <div class="card-deck">
+
+                    <div style="background-color:rgb(236, 236, 236)" class="card">
+                      <!-- Card image -->
+                    <div class="view overlay zoom">
+                        <a href="/project/{{project_item.id}}">
+                        <img class="card-img-top" src="{{project_item.image.url}}" alt="{{ project_item.project_name }}" height="300px">
+                        </a>
+                      </div>
+
+                      <div class="card-body pr-2 pl-2 pr-2 mr-2">
+                        <h4 class="card-title ml-4">~ {{ project_item.title }}</h4>
+
+                      </div>
+                      <div class="card-footer">
+                        <div  style="font-family: nunito;"><span class="dark-text ml-2 mt-2"><img src="{{ project_item.author.profile.image.url }}" alt="" class="rounded-circle img-fluid mr-1 text-black" style="width: 37px; height: 37px;">By: {{project_item.author}} <br>  <span class="ml-2 dark-text">{{project_item.created_date|timesince}}</span></span></div>
+                      </div>
+                    </div>
+
+
+                  </div>
+                <!-- end of card deck  -->
+  ​
+            </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+{% endblock %}
