@@ -104,3 +104,35 @@ def get_project(request, id):
     return render(request, 'project.html', {'project':project})
 
 
+def search_projects(request):
+    if 'post' in request.GET and request.GET['post']:
+        search_term = request.GET["post"]
+        searched_projects = Projects.search_projects(search_term)
+        message = f'search_term'
+        context = {
+            "projects":searched_projects,
+            "message":message,
+
+        }
+        return render(request, 'search.html', context)
+    else:
+        message = "You haven't searched for any user"
+        context = {
+            "message":message,
+        }
+        return render(request, 'search.html', context)
+
+
+
+class ProjectList(APIView):
+    def get(self, request, format=None):
+        allprojects = Projects.objects.all()
+        serializers = ProjectSerializer(allprojects, many=True)
+        return Response(serializers.data)
+
+
+class ProfileList(APIView):
+    def get(self, request, format=None):
+        allprofiles = Profile.objects.all()
+        serializers = ProfileSerializer(allprofiles, many=True)
+        return Response(serializers.data)
