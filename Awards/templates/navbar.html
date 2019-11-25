@@ -2,7 +2,7 @@
 {% load static%}
 
     <!--Navbar--> 
-    <nav style="font-family: Nunito;" class="navbar navbar-expand-sm  content fixed">
+    <nav  style="font-family: Nunito; background-color: rgb(0, 0, 0);" class="navbar navbar-expand-sm  content " >
 
       <!-- Navbar brand -->
       <div class="award">
@@ -12,11 +12,6 @@
             </a>
       </div>
       <!-- Collapse button -->
-      <button class="navbar-toggler bg-info text-white" type="button" data-toggle="collapse" data-target="#basicExampleNav"
-        aria-controls="basicExampleNav" aria-expanded="false" aria-label="Toggle navigation">
-        <!-- <span class="navbar-toggler-icon"></span> -->
-        Menu
-      </button>
 
       <!-- Collapsible content -->
       <div class="collapse navbar-collapse" id="basicExampleNav">
@@ -25,24 +20,14 @@
         <ul class="navbar-nav mr-auto text-white">
           {% if user.is_authenticated %}
           <!-- Dropdown -->
-          <div class="">
-            <li class="nav-item dropdown ml-2 text-light">
-              <a class="nav-link dropdown-toggle text-light" id="navbarDropdownMenuLink" data-toggle="dropdown"
-                aria-haspopup="true" aria-expanded="false"><h5>Account</h5></a>
-              <div class="dropdown-menu dropdown-primary text-dark" aria-labelledby="navbarDropdownMenuLink">
-                <a class="dropdown-item" href="{% url 'profile' %}">Profile</a>
-                <a class="dropdown-item" href="{% url 'logout' %}">Logout</a>
-              </div>
-            </li>
-          </div>
             <li class="nav-item ml-2 ">
-              <a class="nav-link text-light" href="{% url 'newproject' %}"><h5>ADD PROJECT</h5></a>
+              <a style="color:rgb(255, 254, 198)" class="nav-link" href="{% url 'newproject' %}"><h5>ADD PROJECT</h5></a>
             </li>
           </div>
           {% else %}
           <div class="btn btn-dark btn-sm">
             <li class="nav-item">
-              <a class="nav-link text-white" href="{% url 'login' %}"><h5>Login</h5></a>
+              <a class="nav-link text-white" href="{% url 'login' %}"><h5>Loginlight</h5></a>
             </li>
           </div>
           <div class="btn btn-dark btn-sm">
@@ -53,16 +38,27 @@
           {% endif %}
         </ul>
         <!-- Links -->
+       
 
-      <ul class="navbar-nav">
-        <div class="">
+      <ul  class="navbar-nav">
+        <div style="margin-right: 33px;"> 
           <form class="form-inline" action="{% url 'search' %}">
             <div class="md-form my-0">
-              <input class="form-control mr-sm-2 text-white" type="text" placeholder="Search" aria-label="Search" name="post">
+              <input style="font-size: 12px; color:rgb(255, 254, 198)" class="form-control mr-sm-2 text-white" type="text" placeholder="Search" aria-label="Search" name="post">
             </div>
           </form>
         </div>
       </ul>
+      <div class="">
+        <li class="nav-item dropdown ml-2 text-light">
+          <a style="font-size: 15px; color:rgb(255, 254, 198)" class="nav-link dropdown-toggle text-light" id="navbarDropdownMenuLink" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">Account</a>
+          <div style="color:rgb(255, 254, 198)"  class="dropdown-menu dropdown-primary text-dark" aria-labelledby="navbarDropdownMenuLink">
+            <a style="font-size: 12px;" class="dropdown-item" href="{% url 'profile' %}">Profile</a>
+            <a style="font-size: 12px;" class="dropdown-item" href="{% url 'logout' %}">Logout</a>
+          </div>
+        </li>
+      </div>
       </div>
       <!-- Collapsible content -->
 
